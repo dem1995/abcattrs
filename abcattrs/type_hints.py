@@ -11,7 +11,8 @@ from .typing_redirect import get_type_hints
 max_iterations: Final = 10_000
 
 
-class MaxIterations(RuntimeError): ...
+class MaxIterations(RuntimeError):
+    ...
 
 
 def get_name_error_name(error: NameError) -> str:
