@@ -29,9 +29,7 @@ def get_resolvable_type_hints(cls: type) -> Dict[str, type]:
 
     for _ in range(max_iterations):
         try:
-            return get_type_hints(
-                cls, include_extras=True, localns=local_ns
-            )
+            return get_type_hints(cls, include_extras=True, localns=local_ns)
         except NameError as exception:
             name = get_name_error_name(exception)
             local_ns[name] = ForwardRef(name)  # type: ignore[assignment]
