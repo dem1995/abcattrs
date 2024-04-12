@@ -31,7 +31,7 @@ def get_resolvable_type_hints(cls: type) -> Dict[str, type]:
         try:
             return get_type_hints(
                 cls, include_extras=True, localns=local_ns
-            )  # type: ignore[call-arg]
+            )
         except NameError as exception:
             name = get_name_error_name(exception)
             local_ns[name] = ForwardRef(name)  # type: ignore[assignment]
